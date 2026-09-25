@@ -21,24 +21,27 @@ def remove_all_char()    :
 
 
 while True:
+    print("\n---------------MENU-------------------\n")
     print('1. Frequency of a character')    
     print('2. Replace a character by another character')
-    print('3. Remove the first occurrence character')
-    print('4. Remove all occurrence charaters')
+    print('3. Remove all occurrence charaters')
+    print('4. Remove the first occurrence character')
     print('5. exit')
 
-    choice = int(input('Enter your choice: '))
+    choice = int(input('\nEnter your choice: '))
 
     if choice == 1:
         freq_character()
 
     elif choice == 2:   
         replace_char()  
+
     elif choice == 3:
-        remove_first_char() 
+        remove_all_char()
 
     elif choice == 4:
-        remove_all_char()
+        remove_first_char() 
+
 
     elif choice == 5:
         print('Ending Program.') 
