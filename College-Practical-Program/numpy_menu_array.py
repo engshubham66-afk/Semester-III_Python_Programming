@@ -3,7 +3,7 @@ import numpy as np
 arr1 = np.array(list(map(int, input('Enter first ARRAY ELEMENTS: ').split())))
 arr2 = np.array(list(map(int, input('Enter second ARRAY ELEMENTS: ').split())))
 
-# part 7(a)
+# part 7(a) Create an array filled with 1's
 def array_filled_with_1():
     rows = int(input('Enter no. of ROWS: '))
     cols = int(input('Enter no. of COLUMN: '))
@@ -32,8 +32,16 @@ def dot_product_arrays() :
 def reshape_1d_to_2d() :
     print('First array: ',arr1)
 
-    newarr = arr1.reshape(2, 2)    
-    print('Reshape array of first array: \n', newarr)
+    rows = int(input("Enter number of rows: "))
+    cols = int(input("Enter number of columns: "))
+
+    try:
+        newarr = arr1.reshape(rows, cols)    
+        print('Reshape array of first array: \n', newarr)
+
+    except ValueError:
+        print(f"Can not reshape array becaue {arr1.size} \n" 
+              f"is not equal to the size of newarrray {rows * cols}")    
 
 def main_menu():
     while True:
@@ -44,7 +52,7 @@ def main_menu():
         print('4. Reshape a 1-D to 2-D array')
         print('5. Exit')
 
-        ch = int(input('Enter your choice as natural numbers: '))
+        ch = int(input('\nEnter your choice as natural numbers: '))
 
         if ch == 1:
             array_filled_with_1()  
